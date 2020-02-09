@@ -1,0 +1,38 @@
+{
+    "Help": {
+        "name":"Help",
+        "group":"Member",
+        "desc":"Laat een lijst met commands zien.",
+        "usage":"help [groep/command]"
+    },
+    "botinfo": {
+        "name":"Botinfo",
+        "group":"Member",
+        "desc":"Laat informatie over de bot zien.",
+        "usage":"botinfo"
+    },
+    "report": {
+        "name":"Report",
+        "group":"Member",
+        "desc":"Meld een gebruiker, die zich niet aan de regels houd",
+        "usage":"report <@persoon> <reden>"
+    },
+    "clear": {
+        "name":"Clear",
+        "group":"Staff",
+        "desc":"Verwijder tot maximaal 100 berichten in een kanaal.",
+        "usage":"clear <aantal>"
+    },
+    "kick": {
+        "name":"Kick",
+        "group":"Staff",
+        "desc":"Verwijder een persoon van de server.",
+        "usage":"kick <@persoon> [reden]"
+    },
+    "ban": {
+        "name":"Ban",
+        "group":"Staff",
+        "desc":"Ban een persoon van de server voor een aangegeven tijd.",
+        "usage":"ban <@persoon> [reden]"
+    }
+}
