@@ -10,7 +10,7 @@ if(commandfile) commandfile.run(bot,message,args);
 
 module.exports.run = async (bot, message, args) => {
 
-    if (msg.startsWith(prefix + 'HELP')) {    
+    if (msg.startsWith(prefix + 'ban')) {    
         if (msg === `${prefix} ban`) {
 
             let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
