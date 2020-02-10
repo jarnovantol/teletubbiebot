@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
+const prefix = "!";
 
 module.exports.run = async (bot, message, args) => {
+    if (msg === `${prefix} ban`) {
+
         let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!bUser) return message.channel.send("Kan gebruiker niet vinden.");
         let bReason = args.join(" ").slice(22);
@@ -22,7 +25,7 @@ module.exports.run = async (bot, message, args) => {
         
         message.guild.member(bUser).ban(bReason);
         incidentchannel.send(banEmbed);
-
+    }
 }
 
 module.exports.help = {
