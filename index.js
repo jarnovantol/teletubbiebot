@@ -5,7 +5,6 @@ const ytdl = require("ytdl-core");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const commands = JSON.parse(fs.readFileSync('Storage/commands.json', 'utf8'));
-const prefix = ""
 
 fs.readdir("./commands/", (err, files) => {
 
@@ -30,19 +29,17 @@ bot.on("ready", async () => {
 });
 
 bot.on("message", async message => {
-  if(message.author.bot) return;
-  if(message.channel.type === "dm") return;
-
-  let prefix = botconfig.prefix;
-  let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
-  let args = messageArray.slice(1);
-  let commandfile = bot.commands.get(cmd.slice(prefix.length));
-  let msg = message.content.toUpperCase();
-  if(commandfile) commandfile.run(bot,message,args);
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
   
-
-});
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(bot,message,args);
+  
+  });
 
 bot.on('guildMemberAdd', member =>{
 
