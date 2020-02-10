@@ -2,6 +2,19 @@ const Discord = require("discord.js");
 const prefix = "!";
 let msg = message.content.toUpperCase();
 
+bot.on("message", async message => {
+    if(message.author.bot) return;
+    if(message.channel.type === "dm") return;
+  
+    let prefix = botconfig.prefix;
+    let messageArray = message.content.split(" ");
+    let cmd = messageArray[0];
+    let args = messageArray.slice(1);
+    let commandfile = bot.commands.get(cmd.slice(prefix.length));
+    if(commandfile) commandfile.run(bot,message,args);
+  
+  });
+
 module.exports.run = async (bot, message, args) => {
     if (msg.startsWith(prefix + 'HELP')) {    
         if (msg === `${prefix} ban`) {
