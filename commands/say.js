@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const errors = require("../utils/errors.js");
+const prefix = "!";
 
 module.exports.run = async (bot, message, args) => {
 
@@ -10,5 +11,6 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-  name: "say"
+  name: "say",
+  prefix: "!"
 }
