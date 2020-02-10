@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const prefix = "!";
+let msg = message.content.toUpperCase();
 
 module.exports.run = async (bot, message, args) => {
     if (msg === `${prefix} ban`) {
